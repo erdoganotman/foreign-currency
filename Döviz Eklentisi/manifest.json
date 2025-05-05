@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Döviz Kuru ve Hesaplama Eklentisi",
+    "version": "1.0",
+    "description": "Anlık döviz kurları ve para birimi çevirici",
+    "author": "Erdoğan Otman",
+    "permissions": ["storage"],
+    "host_permissions": ["https://api.exchangerate-api.com/*"],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }

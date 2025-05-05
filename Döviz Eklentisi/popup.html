@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Çevirici</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+      
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px !important; /* Genişlik 350px */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .exchange-rates {
+            font-size: 14px;
+            margin: 10px 0;
+            white-space: nowrap;
+        }
+
+        .exchange-rates marquee {
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .exchange-rates strong {
+            color: #007bff;
+        }
+
+        input, select, button {
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%; /* Inputlar ve butonlar genişliği eşit yapıldı */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        select {
+            background-color: #f9f9f9;
+        }
+
+        #result {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+      
+        @media (max-width: 600px) {
+            .container {
+                width: 90%; /* Mobilde container genişliği %90 */
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            input, select, button {
+                font-size: 12px;
+            }
+        }
+
+        /* Marquee için animasyon */
+        marquee {
+            font-size: 14px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/logo.png" alt="" srcset="" height="90px" width="150px">
+        <h2>Döviz Çevirici</h2>
+
+        <!-- Marquee kullanılarak döviz kurları yan yana kaydırıldı -->
+        <div class="exchange-rates">
+            <marquee behavior="scroll" direction="left">
+                <strong>1 €:</strong> <span id="eur-rate">-</span> TRY &nbsp;&nbsp;
+                <strong>1 $:</strong> <span id="usd-rate">-</span> TRY &nbsp;&nbsp;
+                <strong>1 £:</strong> <span id="gbp-rate">-</span> TRY
+            </marquee>
+        </div>
+<div>
+        <input type="number" id="amount" placeholder="Miktar" />
+        <select id="fromCurrency"></select>
+        <button id="switch" style="width: 40px;">↔</button>
+        <select id="toCurrency"></select>
+        <button id="convert">Çevir</button>
+        <h3 id="result"></h3>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
